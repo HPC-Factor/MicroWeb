@@ -71,7 +71,7 @@ void EncodeImage(const char* imageFilename, ofstream& outputFile, const char* va
 	outputFile << "static unsigned char " << varName << "_Data[] = {" << endl;
 	outputFile << "\t";
 
-	for (int n = 0; n < output.size(); n++)
+	for (size_t  n = 0; n < output.size(); n++)
 	{
 		int mask = output[n];
 		outputFile << "0x" << setfill('0') << setw(2) << hex << mask << ", ";

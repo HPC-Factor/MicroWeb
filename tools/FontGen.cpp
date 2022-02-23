@@ -100,7 +100,7 @@ void EncodeFont(const char* imageFilename, ofstream& outputFile, const char* var
 	
 	int requiredBytes = 0;
 	
-	for(int n = 0; n < glyphWidths.size(); n++)
+	for(size_t  n = 0; n < glyphWidths.size(); n++)
 	{
 		int width = glyphWidths[n];
 		int needed = width / 8;
@@ -116,7 +116,7 @@ void EncodeFont(const char* imageFilename, ofstream& outputFile, const char* var
 	
 	outputFile << "static unsigned char " << varName << "_Data[] = {" << endl;
 	
-	for(int n = 0; n < offsets.size(); n++)
+	for(size_t  n = 0; n < offsets.size(); n++)
 	{
 		char c = (char)(n + 32);
 		outputFile << "\t// '" << c << "'" << endl;
@@ -160,7 +160,7 @@ void EncodeFont(const char* imageFilename, ofstream& outputFile, const char* var
 	outputFile << "\t// Glyph widths" << endl;
 	outputFile << "\t{ ";
 	
-	for(int n = 0; n < glyphWidths.size(); n++)
+	for(size_t  n = 0; n < glyphWidths.size(); n++)
 	{
 		int width = glyphWidths[n];
 		outputFile << width;
